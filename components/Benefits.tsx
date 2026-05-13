@@ -1,24 +1,30 @@
-import { Check } from "lucide-react";
-
-const benefits = [
-  "Know exactly what's not working in your marketing",
-  "Clear plan to get more leads and customers",
-  "Stop wasting money on things that don't work",
-  "Simple steps you can actually follow"
-];
+import { ClipboardCheck, Mail, MessageSquare, PhoneCall, Target } from "lucide-react";
 
 const steps = [
   {
+    icon: ClipboardCheck,
     title: "Step 1",
-    text: "You book the call and share your business details"
+    text: "Fill up the form"
   },
   {
+    icon: Mail,
     title: "Step 2",
-    text: "We review your current marketing and problems"
+    text: "Receive an email with the appointment link"
   },
   {
+    icon: MessageSquare,
     title: "Step 3",
-    text: "You get a clear, customized plan for your business"
+    text: "Fill the appointment form"
+  },
+  {
+    icon: PhoneCall,
+    title: "Step 4",
+    text: "Join the 1:1 consultation call"
+  },
+  {
+    icon: Target,
+    title: "Step 5",
+    text: "Get your customized digital marketing plan for FREE"
   }
 ];
 
@@ -26,47 +32,33 @@ export default function Benefits() {
   return (
     <section className="px-5 py-16 sm:py-20">
       <div className="mx-auto max-w-6xl">
-        <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
-          <div>
-            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-gold-700">
-              How You Benefit From This Consultation
-            </p>
-            <h2 className="text-3xl font-semibold leading-tight text-ink sm:text-4xl">
-              A clear path to more leads and customers.
-            </h2>
-          </div>
-          <div className="grid gap-4 sm:grid-cols-2">
-            {benefits.map((benefit) => (
-              <div
-                key={benefit}
-                className="rounded-md border border-gold-100 bg-white p-5 shadow-sm"
-              >
-                <div className="mb-4 flex h-9 w-9 items-center justify-center rounded-full bg-gold-100 text-gold-800">
-                  <Check className="h-5 w-5" aria-hidden="true" />
-                </div>
-                <p className="font-semibold leading-7 text-ink">{benefit}</p>
-              </div>
-            ))}
-          </div>
+        <div className="mx-auto max-w-3xl text-center">
+          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-gold-700">
+            How The Free Consultation Works
+          </p>
+          <h2 className="text-3xl font-semibold leading-tight text-ink sm:text-5xl">
+            Simple steps. No confusion.
+          </h2>
+          <p className="mt-5 text-lg leading-8 text-zinc-700">
+            You fill the details, book your appointment, and come to the call
+            ready to get clarity about your marketing.
+          </p>
         </div>
 
-        <div className="mt-16 border-t border-gold-100 pt-12">
-          <p className="mb-8 text-sm font-semibold uppercase tracking-[0.18em] text-gold-700">
-            Process of This Consultation
-          </p>
-          <div className="grid gap-4 md:grid-cols-3">
-            {steps.map((step) => (
-              <div
-                key={step.title}
-                className="rounded-md border border-gold-100 bg-white p-6"
-              >
-                <p className="text-sm font-semibold text-gold-700">
-                  {step.title}
-                </p>
-                <p className="mt-3 leading-7 text-zinc-700">{step.text}</p>
+        <div className="mt-10 grid gap-4 md:grid-cols-5">
+          {steps.map((step) => {
+            const Icon = step.icon;
+
+            return (
+              <div key={step.title} className="rounded-md border border-gold-100 bg-white p-5 shadow-sm">
+                <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-full bg-gold-100 text-gold-800">
+                  <Icon className="h-5 w-5" aria-hidden="true" />
+                </div>
+                <p className="text-sm font-semibold text-gold-700">{step.title}</p>
+                <p className="mt-3 text-sm font-semibold leading-6 text-ink">{step.text}</p>
               </div>
-            ))}
-          </div>
+            );
+          })}
         </div>
       </div>
     </section>

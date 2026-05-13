@@ -20,7 +20,7 @@ export default function Urgency() {
             href="#book-call"
             className="inline-flex h-12 items-center justify-center rounded-md bg-white px-6 text-sm font-semibold text-ink transition hover:bg-gold-100 focus:outline-none focus:ring-4 focus:ring-gold-300"
           >
-            Book Free Consultation
+            Booking your FREE Consultation Call Now
           </a>
         </div>
       </div>
