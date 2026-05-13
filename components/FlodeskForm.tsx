@@ -102,7 +102,7 @@ export default function FlodeskForm() {
       />
       <div
         data-ff-el="config"
-        data-ff-config="eyJ0cmlnZ2VyIjp7Im1vZGUiOiJpbW1lZGlhdGVseSIsInZhbHVlIjowfSwib25TdWNjZXNzIjp7Im1vZGUiOiJtZXNzYWdlIiwibWVzc2FnZSI6IiIsInJlZGlyZWN0VXJsIjoiIn0sImNvaSI6ZmFsc2UsInNob3dGb3JSZXR1cm5WaXNpdG9ycyI6dHJ1ZSwibm90aWZpY2F0aW9uIjpmYWxzZSwiZ2RwciI6eyJhY2NlcHRzTWFya2V0aW5nIjpmYWxzZSwicHJpdmFjeVBvbGljeSI6eyJlbmFibGVkIjpmYWxzZSwibWFuZGF0b3J5IjpmYWxzZX19LCJ0cmFja2luZ0NvbmZpZyI6eyJtZXRhUGl4ZWxJZCI6IiIsImNvb2tpZUJhbm5lckVuYWJsZWQiOmZhbHNlLCJnb29nbGVBbmFseXRpY3NJZCI6IiJ9fQ=="
+        data-ff-config="eyJ0cmlnZ2VyIjp7Im1vZGUiOiJpbW1lZGlhdGVseSIsInZhbHVlIjowfSwib25TdWNjZXNzIjp7Im1vZGUiOiJyZWRpcmVjdCIsIm1lc3NhZ2UiOiIiLCJyZWRpcmVjdFVybCI6Imh0dHBzOi8vY29uc3VsdGFudC50ZWpuYXJheWFudGhhcnUuY29tLm5wL3RoYW5rcyJ9LCJjb2kiOmZhbHNlLCJzaG93Rm9yUmV0dXJuVmlzaXRvcnMiOnRydWUsIm5vdGlmaWNhdGlvbiI6ZmFsc2UsImdkcHIiOnsiYWNjZXB0c01hcmtldGluZyI6ZmFsc2UsInByaXZhY3lQb2xpY3kiOnsiZW5hYmxlZCI6ZmFsc2UsIm1hbmRhdG9yeSI6ZmFsc2V9fSwidHJhY2tpbmdDb25maWciOnsibWV0YVBpeGVsSWQiOiIiLCJjb29raWVCYW5uZXJFbmFibGVkIjpmYWxzZSwiZ29vZ2xlQW5hbHl0aWNzSWQiOiIifX0="
         style={{ display: "none" }}
       />
 
@@ -150,23 +150,7 @@ export default function FlodeskForm() {
                 label="Website or Facebook Page Link"
                 name="fields.websiteFacebookLink"
                 placeholder="Your website or Facebook page link"
-                tab="fields.websiteFacebookLink:fields.businessName:fields.messageForUs"
-              />
-            </div>
-            <div className="sm:col-span-2">
-              <label
-                htmlFor="ff-69fd9684630da6cd96c45be7-messageForUs"
-                className="mb-2 block text-sm font-semibold text-ink"
-              >
-                Message for Us
-              </label>
-              <textarea
-                id="ff-69fd9684630da6cd96c45be7-messageForUs"
-                className="fd-form-control min-h-32 w-full resize-y rounded-md border border-zinc-200 bg-[#fffaf0] px-4 py-3 text-base outline-none transition placeholder:text-zinc-400 focus:border-gold-400 focus:ring-4 focus:ring-gold-100"
-                maxLength={1000}
-                name="fields.messageForUs"
-                placeholder="Tell us anything important about your business..."
-                data-ff-tab="fields.messageForUs:fields.websiteFacebookLink:submit"
+                tab="fields.websiteFacebookLink:fields.businessName:submit"
               />
             </div>
             <input
