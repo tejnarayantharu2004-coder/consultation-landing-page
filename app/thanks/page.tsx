@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, MessageCircle } from "lucide-react";
+import VimeoPlayer from "@/components/VimeoPlayer";
 
 export const metadata: Metadata = {
   title: "Thanks",
@@ -31,20 +32,13 @@ export default function ThanksPage() {
           what to do next.
         </p>
 
-        <div className="mt-10 aspect-video w-full overflow-hidden rounded-md border border-gold-100 bg-ink shadow-soft">
-          <iframe
-            src="https://player.vimeo.com/video/1192038930?fl=tl&fe=ec"
-            title="Consultation next steps video"
-            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-            referrerPolicy="strict-origin-when-cross-origin"
-            className="h-full w-full"
-            allowFullScreen
-          />
+        <div className="mt-10 w-full">
+          <VimeoPlayer />
         </div>
 
         <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <a
-            href="https://wa.me/9779804424395"
+            href="https://wa.me/qr/NZUU6FMTNJQ7L1"
             target="_blank"
             rel="noreferrer"
             className="inline-flex h-14 items-center justify-center gap-2 rounded-md bg-[#25D366] px-8 text-base font-semibold text-white shadow-soft transition hover:bg-[#1fb857] focus:outline-none focus:ring-4 focus:ring-green-200"
