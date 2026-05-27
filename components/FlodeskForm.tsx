@@ -14,8 +14,8 @@ declare global {
   }
 }
 
-const formId = "69fd9684630da6cd96c45be7";
-const rootSelector = ".ff-69fd9684630da6cd96c45be7";
+const formId = "6a15cf7232852f9fbf9bef48";
+const rootSelector = ".ff-6a15cf7232852f9fbf9bef48";
 
 export default function FlodeskForm() {
   const router = useRouter();
@@ -32,6 +32,7 @@ export default function FlodeskForm() {
 
       const firstScript = document.getElementsByTagName("script")[0];
       const version = `?v=${Math.floor(Date.now() / (120 * 1000)) * 60}`;
+
       const moduleScript = document.createElement("script");
       moduleScript.async = true;
       moduleScript.type = "module";
@@ -54,11 +55,7 @@ export default function FlodeskForm() {
     let redirectTimer: ReturnType<typeof setTimeout> | undefined;
 
     const observer = new MutationObserver(() => {
-      const successVisible = root
-        ?.querySelector<HTMLElement>('[data-ff-el="success"]')
-        ?.checkVisibility?.();
-      const succeeded =
-        root?.getAttribute("data-ff-stage") === "success" || successVisible;
+      const succeeded = root?.getAttribute("data-ff-stage") === "success";
 
       if (succeeded && !redirectTimer) {
         redirectTimer = setTimeout(() => {
@@ -83,14 +80,7 @@ export default function FlodeskForm() {
   }, [router]);
 
   return (
-    <div
-      className="ff-69fd9684630da6cd96c45be7"
-      data-ff-el="root"
-      data-ff-version="3"
-      data-ff-type="inline"
-      data-ff-name="inlineNoImage"
-      data-ff-stage="default"
-    >
+    <>
       <link
         rel="preload"
         href="https://assets.flodesk.com/flodesk-sans.css"
@@ -100,127 +90,392 @@ export default function FlodeskForm() {
         rel="stylesheet"
         href="https://assets.flodesk.com/flodesk-sans.css"
       />
+
+      <style jsx global>{`
+        [data-ff-el="root"].ff-6a15cf7232852f9fbf9bef48 *,
+        [data-ff-el="root"].ff-6a15cf7232852f9fbf9bef48 *::before,
+        [data-ff-el="root"].ff-6a15cf7232852f9fbf9bef48 *::after {
+          box-sizing: border-box;
+        }
+
+        [data-ff-el="root"].ff-6a15cf7232852f9fbf9bef48 {
+          color: #111111;
+          background-color: transparent;
+          font-family: Helvetica, sans-serif;
+        }
+
+        [data-ff-el="root"].ff-6a15cf7232852f9fbf9bef48 [hidden] {
+          display: none !important;
+        }
+
+        [data-ff-el="root"].ff-6a15cf7232852f9fbf9bef48 .fd-form-control {
+          width: 100%;
+          display: block;
+          outline: none;
+          appearance: none;
+        }
+
+        [data-ff-el="root"].ff-6a15cf7232852f9fbf9bef48 .fd-form-content {
+          position: relative;
+        }
+
+        [data-ff-el="root"].ff-6a15cf7232852f9fbf9bef48 .fd-form-success,
+        [data-ff-el="root"].ff-6a15cf7232852f9fbf9bef48 .fd-form-error {
+          display: none;
+        }
+
+        [data-ff-el="root"].ff-6a15cf7232852f9fbf9bef48[data-ff-stage="success"]
+          .ff-6a15cf7232852f9fbf9bef48__content {
+          display: none;
+        }
+
+        [data-ff-el="root"].ff-6a15cf7232852f9fbf9bef48[data-ff-stage="success"]
+          .ff-6a15cf7232852f9fbf9bef48__success {
+          display: block;
+        }
+
+        [data-ff-el="root"].ff-6a15cf7232852f9fbf9bef48 .ff-6a15cf7232852f9fbf9bef48__container {
+          margin: 0 auto;
+          max-width: none;
+          overflow: visible;
+          border: 0;
+          background: transparent;
+          box-shadow: none;
+        }
+
+        [data-ff-el="root"].ff-6a15cf7232852f9fbf9bef48 .ff-6a15cf7232852f9fbf9bef48__form {
+          width: 100%;
+          margin: 0;
+          padding: 0;
+          text-align: left;
+        }
+
+        [data-ff-el="root"].ff-6a15cf7232852f9fbf9bef48 .ff-6a15cf7232852f9fbf9bef48__title {
+          display: none;
+        }
+
+        [data-ff-el="root"].ff-6a15cf7232852f9fbf9bef48 .ff-6a15cf7232852f9fbf9bef48__subtitle {
+          display: none;
+        }
+
+        [data-ff-el="root"].ff-6a15cf7232852f9fbf9bef48 .ff-6a15cf7232852f9fbf9bef48__fields {
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          column-gap: 24px;
+          row-gap: 26px;
+          margin: 0 0 30px;
+        }
+
+        [data-ff-el="root"].ff-6a15cf7232852f9fbf9bef48 .ff-6a15cf7232852f9fbf9bef48__field {
+          position: relative;
+          margin: 0;
+          display: flex;
+          flex-direction: column;
+          text-align: left;
+        }
+
+        [data-ff-el="root"].ff-6a15cf7232852f9fbf9bef48 .ff-6a15cf7232852f9fbf9bef48__field:nth-of-type(5) {
+          grid-column: 1 / -1;
+        }
+
+        [data-ff-el="root"].ff-6a15cf7232852f9fbf9bef48 .ff-6a15cf7232852f9fbf9bef48__control {
+          order: 2;
+          height: 64px;
+          border: 1px solid #e1e1e1;
+          border-radius: 8px;
+          background: #fffaf0;
+          color: #111111;
+          padding: 0 18px;
+          font-size: 16px;
+          line-height: 1.4;
+          transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        [data-ff-el="root"].ff-6a15cf7232852f9fbf9bef48 .ff-6a15cf7232852f9fbf9bef48__control::placeholder {
+          color: #9ca3af;
+          opacity: 1;
+        }
+
+        [data-ff-el="root"].ff-6a15cf7232852f9fbf9bef48 .ff-6a15cf7232852f9fbf9bef48__control:focus {
+          border-color: #b48937;
+          box-shadow: 0 0 0 4px rgba(180, 137, 55, 0.15);
+        }
+
+        [data-ff-el="root"].ff-6a15cf7232852f9fbf9bef48 .ff-6a15cf7232852f9fbf9bef48__label {
+          position: static;
+          order: 1;
+          margin: 0 0 10px;
+          color: #000000;
+          font-size: 15px;
+          font-weight: 700;
+          line-height: 1.2;
+        }
+
+        [data-ff-el="root"].ff-6a15cf7232852f9fbf9bef48 .ff-6a15cf7232852f9fbf9bef48__footer {
+          display: flex;
+          align-items: center;
+          gap: 22px;
+          text-align: left;
+        }
+
+        [data-ff-el="root"].ff-6a15cf7232852f9fbf9bef48 .ff-6a15cf7232852f9fbf9bef48__button {
+          width: auto;
+          min-height: 60px;
+          border: 1px solid #111111;
+          border-radius: 8px;
+          background: #111111;
+          color: #ffffff;
+          padding: 15px 30px;
+          cursor: pointer;
+          font-size: 17px;
+          font-weight: 700;
+          transition: background-color 0.2s ease, transform 0.2s ease;
+        }
+
+        [data-ff-el="root"].ff-6a15cf7232852f9fbf9bef48 .ff-6a15cf7232852f9fbf9bef48__button:hover {
+          background: #7c5d21;
+          transform: translateY(-1px);
+        }
+
+        [data-ff-el="root"].ff-6a15cf7232852f9fbf9bef48 .ff-6a15cf7232852f9fbf9bef48__success-message {
+          color: #111111;
+          padding: 22px;
+          border-radius: 8px;
+          background: #fff5d1;
+          font-size: 17px;
+          line-height: 1.6;
+        }
+
+        [data-ff-el="root"].ff-6a15cf7232852f9fbf9bef48 .ff-6a15cf7232852f9fbf9bef48__error {
+          margin-top: 14px;
+          color: #c84e41;
+          font-size: 14px;
+          font-weight: 700;
+        }
+
+        @media (max-width: 767px) {
+          [data-ff-el="root"].ff-6a15cf7232852f9fbf9bef48 .ff-6a15cf7232852f9fbf9bef48__form {
+            padding: 24px;
+          }
+
+          [data-ff-el="root"].ff-6a15cf7232852f9fbf9bef48 .ff-6a15cf7232852f9fbf9bef48__fields {
+            grid-template-columns: 1fr;
+          }
+
+          [data-ff-el="root"].ff-6a15cf7232852f9fbf9bef48 .ff-6a15cf7232852f9fbf9bef48__footer {
+            align-items: stretch;
+            flex-direction: column;
+          }
+
+          [data-ff-el="root"].ff-6a15cf7232852f9fbf9bef48 .ff-6a15cf7232852f9fbf9bef48__button {
+            width: 100%;
+          }
+        }
+      `}</style>
+
       <div
-        data-ff-el="config"
-        data-ff-config="eyJ0cmlnZ2VyIjp7Im1vZGUiOiJpbW1lZGlhdGVseSIsInZhbHVlIjowfSwib25TdWNjZXNzIjp7Im1vZGUiOiJyZWRpcmVjdCIsIm1lc3NhZ2UiOiIiLCJyZWRpcmVjdFVybCI6Imh0dHBzOi8vY29uc3VsdGFudC50ZWpuYXJheWFudGhhcnUuY29tLm5wL3RoYW5rcyJ9LCJjb2kiOmZhbHNlLCJzaG93Rm9yUmV0dXJuVmlzaXRvcnMiOnRydWUsIm5vdGlmaWNhdGlvbiI6ZmFsc2UsImdkcHIiOnsiYWNjZXB0c01hcmtldGluZyI6ZmFsc2UsInByaXZhY3lQb2xpY3kiOnsiZW5hYmxlZCI6ZmFsc2UsIm1hbmRhdG9yeSI6ZmFsc2V9fSwidHJhY2tpbmdDb25maWciOnsibWV0YVBpeGVsSWQiOiIiLCJjb29raWVCYW5uZXJFbmFibGVkIjpmYWxzZSwiZ29vZ2xlQW5hbHl0aWNzSWQiOiIifX0="
-        style={{ display: "none" }}
-      />
-
-      <form
-        action="https://form.flodesk.com/forms/69fd9684630da6cd96c45be7/submit"
-        method="post"
-        data-ff-el="form"
-        className="rounded-md border border-gold-100 bg-white p-5 shadow-soft sm:p-8"
+        className="ff-6a15cf7232852f9fbf9bef48"
+        data-ff-el="root"
+        data-ff-version="3"
+        data-ff-type="inline"
+        data-ff-name="inlineNoImage"
+        data-ff-stage="default"
       >
-        <div data-ff-el="content" className="fd-form-content">
-          <div data-ff-el="fields" className="grid gap-5 sm:grid-cols-2">
-            <Field
-              id="ff-69fd9684630da6cd96c45be7-firstName"
-              label="Full Name"
-              name="firstName"
-              placeholder="Your full name"
-              tab="firstName::email"
-            />
-            <Field
-              id="ff-69fd9684630da6cd96c45be7-email"
-              label="Email"
-              name="email"
-              placeholder="you@example.com"
-              tab="email:firstName:fields.whatsapp"
-              type="email"
-            />
-            <Field
-              id="ff-69fd9684630da6cd96c45be7-Tu3sZXewHc"
-              label="WhatsApp Number"
-              name="fields.whatsapp"
-              placeholder="Your WhatsApp number"
-              tab="fields.whatsapp:email:fields.businessName"
-              type="tel"
-            />
-            <Field
-              id="ff-69fd9684630da6cd96c45be7-4nJyduxuYM"
-              label="Business Name"
-              name="fields.businessName"
-              placeholder="Your business name"
-              tab="fields.businessName:fields.whatsapp:fields.websiteFacebookLink"
-            />
-            <div className="sm:col-span-2">
-              <Field
-                id="ff-69fd9684630da6cd96c45be7-CClCpCn1WO"
-                label="Website or Facebook Page Link"
-                name="fields.websiteFacebookLink"
-                placeholder="Your website or Facebook page link"
-                tab="fields.websiteFacebookLink:fields.businessName:submit"
-              />
-            </div>
-            <input
-              type="text"
-              maxLength={255}
-              name="confirm_email_address"
-              style={{ display: "none" }}
-              tabIndex={-1}
-              autoComplete="off"
-            />
-          </div>
-
-          <div data-ff-el="footer" className="mt-7 flex flex-col gap-4 sm:flex-row sm:items-center">
-            <button
-              type="submit"
-              data-ff-el="submit"
-              data-ff-tab="submit"
-              className="inline-flex h-14 items-center justify-center rounded-md bg-ink px-7 text-base font-semibold text-white shadow-soft transition hover:bg-gold-800 focus:outline-none focus:ring-4 focus:ring-gold-200"
+        <div
+          data-ff-el="config"
+          data-ff-config="eyJ0cmlnZ2VyIjp7Im1vZGUiOiJpbW1lZGlhdGVseSIsInZhbHVlIjowfSwib25TdWNjZXNzIjp7Im1vZGUiOiJtZXNzYWdlIiwibWVzc2FnZSI6IjxkaXYgZGF0YS1wYXJhZ3JhcGg9XCJ0cnVlXCI+VGhhbmsgeW91IGZvciBzdWJzY3JpYmluZyE8L2Rpdj4iLCJyZWRpcmVjdFVybCI6Imh0dHBzOi8vY29uc3VsdGFudC50ZWpuYXJheWFudGhhcnUuY29tLm5wL3RoYW5rcyJ9LCJjb2kiOmZhbHNlLCJzaG93Rm9yUmV0dXJuVmlzaXRvcnMiOnRydWUsIm5vdGlmaWNhdGlvbiI6ZmFsc2UsImdkcHIiOnsiYWNjZXB0c01hcmtldGluZyI6ZmFsc2UsInByaXZhY3lQb2xpY3kiOnsiZW5hYmxlZCI6ZmFsc2UsIm1hbmRhdG9yeSI6ZmFsc2V9fSwidHJhY2tpbmdDb25maWciOnsibWV0YVBpeGVsSWQiOiIiLCJjb29raWVCYW5uZXJFbmFibGVkIjpmYWxzZSwiZ29vZ2xlQW5hbHl0aWNzSWQiOiIifX0="
+          style={{ display: "none" }}
+        />
+        <div className="ff-6a15cf7232852f9fbf9bef48__container">
+          <div className="ff-6a15cf7232852f9fbf9bef48__wrapper">
+            <form
+              className="ff-6a15cf7232852f9fbf9bef48__form"
+              action="https://form.flodesk.com/forms/6a15cf7232852f9fbf9bef48/submit"
+              method="post"
+              data-ff-el="form"
             >
-              <span data-draw-element="editable">
-                Booking your FREE Consultation Call Now
-              </span>
-            </button>
-            <p className="inline-flex items-center gap-2 text-sm font-medium text-zinc-600">
-              <LockKeyhole className="h-4 w-4 text-gold-700" aria-hidden="true" />
-              We respect your privacy. No spam.
-            </p>
+              <div className="ff-6a15cf7232852f9fbf9bef48__title">
+                <div style={{ wordBreak: "break-word" }}>
+                  <div data-paragraph="true">
+                    <strong>Free 1:1 Consultation Call</strong>
+                  </div>
+                </div>
+              </div>
+              <div className="ff-6a15cf7232852f9fbf9bef48__subtitle">
+                <div style={{ wordBreak: "break-word" }}>
+                  <div data-paragraph="true">
+                    Book a FREE Digital Marketing consultation call with me and
+                    get a customized digital marketing strategy for your
+                    business!
+                  </div>
+                </div>
+              </div>
+              <div
+                className="ff-6a15cf7232852f9fbf9bef48__content fd-form-content"
+                data-ff-el="content"
+              >
+                <div
+                  className="ff-6a15cf7232852f9fbf9bef48__fields"
+                  data-ff-el="fields"
+                >
+                  <div className="ff-6a15cf7232852f9fbf9bef48__field fd-form-group">
+                    <input
+                      id="ff-6a15cf7232852f9fbf9bef48-firstName"
+                      className="ff-6a15cf7232852f9fbf9bef48__control fd-form-control"
+                      type="text"
+                      maxLength={255}
+                      name="firstName"
+                      placeholder="First name"
+                      data-ff-tab="firstName::email"
+                      required
+                    />
+                    <label
+                      htmlFor="ff-6a15cf7232852f9fbf9bef48-firstName"
+                      className="ff-6a15cf7232852f9fbf9bef48__label fd-form-label"
+                    >
+                      <div>
+                        <div>First name</div>
+                      </div>
+                    </label>
+                  </div>
+
+                  <div className="ff-6a15cf7232852f9fbf9bef48__field fd-form-group">
+                    <input
+                      id="ff-6a15cf7232852f9fbf9bef48-email"
+                      className="ff-6a15cf7232852f9fbf9bef48__control fd-form-control"
+                      type="text"
+                      maxLength={255}
+                      name="email"
+                      placeholder="Email address"
+                      data-ff-tab="email:firstName:fields.whatsapp"
+                      required
+                    />
+                    <label
+                      htmlFor="ff-6a15cf7232852f9fbf9bef48-email"
+                      className="ff-6a15cf7232852f9fbf9bef48__label fd-form-label"
+                    >
+                      <div>
+                        <div>Email address</div>
+                      </div>
+                    </label>
+                  </div>
+
+                  <div className="ff-6a15cf7232852f9fbf9bef48__field fd-form-group">
+                    <input
+                      id="ff-6a15cf7232852f9fbf9bef48-dbtoPqjvne"
+                      className="ff-6a15cf7232852f9fbf9bef48__control fd-form-control"
+                      type="text"
+                      maxLength={255}
+                      name="fields.whatsapp"
+                      placeholder="Whatsapp Number"
+                      data-ff-tab="fields.whatsapp:email:fields.businessName"
+                      required
+                    />
+                    <label
+                      htmlFor="ff-6a15cf7232852f9fbf9bef48-dbtoPqjvne"
+                      className="ff-6a15cf7232852f9fbf9bef48__label fd-form-label"
+                    >
+                      <div>
+                        <div>Whatsapp Number</div>
+                      </div>
+                    </label>
+                  </div>
+
+                  <div className="ff-6a15cf7232852f9fbf9bef48__field fd-form-group">
+                    <input
+                      id="ff-6a15cf7232852f9fbf9bef48-f2pmzNbcdz"
+                      className="ff-6a15cf7232852f9fbf9bef48__control fd-form-control"
+                      type="text"
+                      maxLength={255}
+                      name="fields.businessName"
+                      placeholder="Business Name"
+                      data-ff-tab="fields.businessName:fields.whatsapp:fields.websiteOrFacebookLink"
+                      required
+                    />
+                    <label
+                      htmlFor="ff-6a15cf7232852f9fbf9bef48-f2pmzNbcdz"
+                      className="ff-6a15cf7232852f9fbf9bef48__label fd-form-label"
+                    >
+                      <div>
+                        <div>Business Name</div>
+                      </div>
+                    </label>
+                  </div>
+
+                  <div className="ff-6a15cf7232852f9fbf9bef48__field fd-form-group">
+                    <input
+                      id="ff-6a15cf7232852f9fbf9bef48-lexVCZK0b1"
+                      className="ff-6a15cf7232852f9fbf9bef48__control fd-form-control"
+                      type="text"
+                      maxLength={255}
+                      name="fields.websiteOrFacebookLink"
+                      placeholder="Website or Facebook Page link"
+                      data-ff-tab="fields.websiteOrFacebookLink:fields.businessName:submit"
+                      required
+                    />
+                    <label
+                      htmlFor="ff-6a15cf7232852f9fbf9bef48-lexVCZK0b1"
+                      className="ff-6a15cf7232852f9fbf9bef48__label fd-form-label"
+                    >
+                      <div>
+                        <div>Website or Facebook Page link</div>
+                      </div>
+                    </label>
+                  </div>
+
+                  <input
+                    type="text"
+                    maxLength={255}
+                    name="confirm_email_address"
+                    style={{ display: "none" }}
+                  />
+                </div>
+
+                <div
+                  className="ff-6a15cf7232852f9fbf9bef48__footer"
+                  data-ff-el="footer"
+                >
+                  <button
+                    type="submit"
+                    className="ff-6a15cf7232852f9fbf9bef48__button fd-btn"
+                    data-ff-el="submit"
+                    data-ff-tab="submit"
+                  >
+                    <div>
+                      <span data-draw-element="editable">
+                        Booking your FREE Consultation Call Now
+                      </span>
+                    </div>
+                  </button>
+                  <p className="inline-flex items-center gap-2 text-sm font-medium text-zinc-600">
+                    <LockKeyhole
+                      className="h-4 w-4 text-gold-700"
+                      aria-hidden="true"
+                    />
+                    We respect your privacy. No spam.
+                  </p>
+                </div>
+              </div>
+              <div
+                className="ff-6a15cf7232852f9fbf9bef48__success fd-form-success"
+                data-ff-el="success"
+              >
+                <div className="ff-6a15cf7232852f9fbf9bef48__success-message">
+                  <div>
+                    <div>
+                      <div data-paragraph="true">Thank you for subscribing!</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="ff-6a15cf7232852f9fbf9bef48__error fd-form-error"
+                data-ff-el="error"
+              />
+            </form>
           </div>
         </div>
-
-        <div className="fd-form-success hidden rounded-md bg-gold-50 p-5 text-center text-ink" data-ff-el="success">
-          <p className="font-semibold">Thank you for subscribing!</p>
-        </div>
-        <div className="fd-form-error mt-4 text-sm font-medium text-red-600" data-ff-el="error" />
-      </form>
-    </div>
-  );
-}
-
-function Field({
-  id,
-  label,
-  name,
-  placeholder,
-  tab,
-  type = "text"
-}: {
-  id: string;
-  label: string;
-  name: string;
-  placeholder: string;
-  tab: string;
-  type?: string;
-}) {
-  return (
-    <div className="fd-form-group">
-      <label htmlFor={id} className="mb-2 block text-sm font-semibold text-ink">
-        {label}
-        <span className="text-gold-700"> *</span>
-      </label>
-      <input
-        id={id}
-        className="fd-form-control h-12 w-full rounded-md border border-zinc-200 bg-[#fffaf0] px-4 text-base outline-none transition placeholder:text-zinc-400 focus:border-gold-400 focus:ring-4 focus:ring-gold-100"
-        type={type}
-        maxLength={255}
-        name={name}
-        placeholder={placeholder}
-        data-ff-tab={tab}
-        required
-      />
-    </div>
+      </div>
+    </>
   );
 }

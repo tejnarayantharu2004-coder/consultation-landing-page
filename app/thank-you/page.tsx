@@ -61,7 +61,7 @@ export default function ThankYouPage() {
           Back to landing page
         </Link>
         <a
-          href="https://wa.me/qr/NZUU6FMTNJQ7L1"
+          href="https://wa.me/9779804424395"
           target="_blank"
           rel="noreferrer"
           className="ml-0 mt-4 inline-flex h-12 items-center justify-center gap-2 rounded-md bg-[#25D366] px-6 text-sm font-semibold text-white transition hover:bg-[#1fb857] focus:outline-none focus:ring-4 focus:ring-green-200 sm:ml-3 sm:mt-9"

@@ -38,7 +38,7 @@ export default function ThanksPage() {
 
         <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <a
-            href="https://wa.me/qr/NZUU6FMTNJQ7L1"
+            href="https://wa.me/9779804424395"
             target="_blank"
             rel="noreferrer"
             className="inline-flex h-14 items-center justify-center gap-2 rounded-md bg-[#25D366] px-8 text-base font-semibold text-white shadow-soft transition hover:bg-[#1fb857] focus:outline-none focus:ring-4 focus:ring-green-200"
